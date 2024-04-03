@@ -19,7 +19,7 @@ public class EmailConsumer {
 
     }
 
-    @org.springframework.kafka.annotation.KafkaListener(topics = "SendEmail", groupId = "EmailService")
+    @org.springframework.kafka.annotation.KafkaListener(topics = {"SendEmail", "SettleUpSplitWise"}, groupId = "EmailService")
     public void deliverEmails(String context) throws JsonProcessingException {
 
         SendEmailDto sendEmailDto = new SendEmailDto();
